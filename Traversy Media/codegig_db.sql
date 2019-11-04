@@ -18,5 +18,4 @@ CREATE TABLE gigs(
   PRIMARY KEY (id)
 );
 
--- Insert a set of records.
-INSERT INTO movies (movie) VALUES ('Gone with the Wind');
+
