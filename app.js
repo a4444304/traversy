@@ -13,10 +13,21 @@ db.authenticate()
 
 const app = express();
 
-app.get('/', (req, res) => res.send("INDEX"));
+// Handlebars
+app.engine("handlebars", expresshandlebars({ defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
+// Body Parser
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Index route, where we use the layout (landing.handlebars).
+app.get("/", (req, res) => res.render("index", { layout: "landing" }));
 
 // Gig routes
-app.use("/gigs", require("./routes/gigs"));
+app.use("/gigs", require("./routes/gigs(routes)"));
 
 const PORT = process.env.PORT || 5000;
 
