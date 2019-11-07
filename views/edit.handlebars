@@ -7,7 +7,7 @@
             <p>{{text}}</p>
         </div>
       {{/each}}
-      <form action="/gigs/add" method="POST">
+      <form action="/gigs/edit" method="POST">
         <div class="input-group">
           <label for="title">Gig Title</label>
           <input type="text" name="title" id="title" class="input-box" placeholder="eg. Small Wordpress website, React developer"
@@ -26,6 +26,7 @@
         </div>
         <div class="input-group">
           <label for="description">Gig Description</label>
+          <br>
           <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the gig"
             rows="10" required>{{description}}</textarea>
             {{!-- The "required" is client side validation. --}}
